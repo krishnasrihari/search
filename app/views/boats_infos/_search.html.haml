@@ -1,3 +1,15 @@
 = search_form_for @search,:url=> search_boats_infos_url, class: 'form-search' do |f|
-  = f.text_field :NAME_cont, class: 'input-medium search-query',:placeholder => "Search"
+  .input-append
+    =f.text_field :NAME_cont, class: 'span2'
+  .btn-group
+    %label.radio      
+      =f.radio_button :LOCATION_cont, 'LOCATION'
+      Location
+    %label.radio
+      =f.radio_button :LOCATION_cont, 'NAME'
+      Name      
+
+       
+      
+  
   = f.submit "Go",class: 'btn'

@@ -40,6 +40,11 @@ class BoatsInfosController < ApplicationController
   end
   
   def search
+    if params[:q] && params[:q][:LOCATION_cont]
+      query = params[:q][:NAME_cont]
+      params[:q] = Hash["#{params[:q][:LOCATION_cont]}_cont", query] if params[:q][:NAME_cont]      
+    end
+    
     @search = BoatsInfo.search(params[:q])    
     @search_result = @search.result(:distinct => true)
     @boats_infos = @search_result.page(params[:page] || 1)
