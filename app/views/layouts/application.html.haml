@@ -1,0 +1,30 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %title 
+      = ((html_title = yield :html_title) ? html_title : 'Boats')
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => (html_description = yield :html_description) ? html_description : "", :name => "description"}/
+      
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"    
+  %body
+    .navbar.navbar-fixed-top
+    %h1 
+      .navbar
+        .navbar-inner
+        /              
+          %ul.nav            
+            %li
+              =link_to "Photos", boats_infos_path
+
+    #container.container
+      .content
+        .row
+          .span12
+            = yield
+    #footer.container
+      <p>&copy; 2012 Yvus.com - All rights reserved.</p>
+    = javascript_include_tag "application"
+    
