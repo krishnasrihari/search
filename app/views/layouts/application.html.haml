@@ -1,8 +1,8 @@
 !!!
 %html{:lang => "en"}
   %head
-    %title 
-      = ((html_title = yield :html_title) ? html_title : 'Boats')
+    %title Boats 
+       
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => (html_description = yield :html_description) ? html_description : "", :name => "description"}/
@@ -14,7 +14,6 @@
     %h1 
       .navbar
         .navbar-inner
-        /              
           %ul.nav            
             %li
               =link_to "Photos", boats_infos_path

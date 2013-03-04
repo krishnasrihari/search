@@ -23,6 +23,7 @@ class BoatsInfosController < ApplicationController
   end
 
   def sort_name_up
+    @search = BoatsInfo.search(params[:q])
     @boats_infos = BoatsInfo.page(params[:page] || 1).order('NAME asc')
       
     #@boats_infos = search.result.order('NAME asc').offset(0).limit(20)
@@ -31,6 +32,7 @@ class BoatsInfosController < ApplicationController
   end
   
   def sort_name_down
+    @search = BoatsInfo.search(params[:q])
     @boats_infos = BoatsInfo.page(params[:page] || 1).order('NAME desc')
     #search = BoatsInfo.search({"s"=>"NAME desc"})
       
