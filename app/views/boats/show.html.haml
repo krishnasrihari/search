@@ -1,0 +1,57 @@
+%p#notice= notice
+
+%p
+  %b Site:
+  = @boat.site_id
+%p
+  %b Site url:
+  = @boat.site_url
+%p
+  %b Id md5:
+  = @boat.id_md5
+%p
+  %b Name:
+  = @boat.name
+%p
+  %b Price gbp:
+  = @boat.price_gbp
+%p
+  %b Price eur:
+  = @boat.price_eur
+%p
+  %b Price listed:
+  = @boat.price_listed
+%p
+  %b Price listed ccy:
+  = @boat.price_listed_ccy
+%p
+  %b Desc full:
+  = @boat.desc_full
+%p
+  %b Desc clean:
+  = @boat.desc_clean
+%p
+  %b Location:
+  = @boat.location
+%p
+  %b Seller name:
+  = @boat.seller_name
+%p
+  %b Seller address:
+  = @boat.seller_address
+%p
+  %b Seller phone:
+  = @boat.seller_phone
+%p
+  %b Extra:
+  = @boat.extra
+%p
+  %b Photos count:
+  = @boat.photos_count
+%p
+  %b Photos urls:
+  = @boat.photos_urls
+
+= link_to 'Edit', edit_boat_path(@boat)
+\|
+= link_to 'Back', boats_path

@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  site_id: 1
+  site_url: MyString
+  id_md5: MyString
+  name: MyString
+  price_gbp: 
+  price_eur: 
+  price_listed: 
+  price_listed_ccy: MyString
+  desc_full: MyText
+  desc_clean: MyText
+  location: MyString
+  seller_name: MyString
+  seller_address: MyString
+  seller_phone: MyString
+  extra: MyString
+  photos_count: 1
+  photos_urls: MyString
+
+two:
+  site_id: 1
+  site_url: MyString
+  id_md5: MyString
+  name: MyString
+  price_gbp: 
+  price_eur: 
+  price_listed: 
+  price_listed_ccy: MyString
+  desc_full: MyText
+  desc_clean: MyText
+  location: MyString
+  seller_name: MyString
+  seller_address: MyString
+  seller_phone: MyString
+  extra: MyString
+  photos_count: 1
+  photos_urls: MyString
