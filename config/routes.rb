@@ -2,7 +2,8 @@ Tmp::Application.routes.draw do
   resources :boats_infos, only:  [:index, :show] do
     collection do
       get :sort_name_up
-      get :sort_name_down  
+      get :sort_name_down 
+      get :search 
     end
   end
 

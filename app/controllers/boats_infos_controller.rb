@@ -3,7 +3,8 @@ class BoatsInfosController < ApplicationController
   # GET /boats_infos.json
   def index
     @boats_infos = BoatsInfo.page(params[:page] || 1)
-
+    @search = BoatsInfo.search(params[:q]
+    )
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @boats_infos }
@@ -37,4 +38,12 @@ class BoatsInfosController < ApplicationController
     
     render 'index'    
   end
+  
+  def search
+    @search = BoatsInfo.search(params[:q])    
+    @search_result = @search.result(:distinct => true)
+    @boats_infos = @search_result.page(params[:page] || 1)
+    render 'index'
+  end
+  
 end
