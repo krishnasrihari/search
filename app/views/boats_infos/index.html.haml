@@ -1,17 +1,10 @@
-%h1 Listing boats_infos
-
-%table
-  %tr
-    %th
-    %th
-    %th
-
-  - @boats_infos.each do |boats_info|
-    %tr
-      %td= link_to 'Show', boats_info
-      %td= link_to 'Edit', edit_boats_info_path(boats_info)
-      %td= link_to 'Destroy', boats_info, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Boats info', new_boats_info_path
+%h3 Boats
+.row-fluid
+  %ul.thumbnails
+    %li.span4 
+      - @boats_infos.each do |b|
+        .thumbnail
+          = image_tag b.photo, size: '400x400'
+          .caption
+            %h4= b.NAME
+            %p= simple_format truncate(b.DESC_FULL,:length=>100)

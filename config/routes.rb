@@ -1,5 +1,9 @@
 Tmp::Application.routes.draw do
-  resources :boats_infos
+  resources :boats_infos, only:  [:index, :show] do
+    collection do
+      get :sort_name  
+    end
+  end
 
 
   # The priority is based upon order of creation:
