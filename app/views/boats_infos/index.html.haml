@@ -1,10 +1,10 @@
 %h3 Boats
+
+.row.toplinks
+  .span8
+    = paginate @boats_infos
+  .span4
+    =render partial: 'sort'
 .row-fluid
   %ul.thumbnails
-    %li.span4 
-      - @boats_infos.each do |b|
-        .thumbnail
-          = image_tag b.photo, size: '400x400'
-          .caption
-            %h4= b.NAME
-            %p= simple_format truncate(b.DESC_FULL,:length=>100)
+    = render partial: 'boats_info', collection: @boats_infos, as: 'boats_info'

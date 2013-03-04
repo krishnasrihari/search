@@ -2,7 +2,7 @@ class BoatsInfosController < ApplicationController
   # GET /boats_infos
   # GET /boats_infos.json
   def index
-    @boats_infos = BoatsInfo.limit(20)
+    @boats_infos = BoatsInfo.page(params[:page] || 1)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,11 +21,20 @@ class BoatsInfosController < ApplicationController
     end
   end
 
-  def sort_name
-    search = BoatsInfo.limit(20).search({"s"=>"NAME asc"})
+  def sort_name_up
+    @boats_infos = BoatsInfo.page(params[:page] || 1).order('NAME asc')
       
-    @boats_infos = search.result.order('NAME asc')
+    #@boats_infos = search.result.order('NAME asc').offset(0).limit(20)
     
     render 'index'
+  end
+  
+  def sort_name_down
+    @boats_infos = BoatsInfo.page(params[:page] || 1).order('NAME desc')
+    #search = BoatsInfo.search({"s"=>"NAME desc"})
+      
+    #@boats_infos = search.result.order('NAME desc').offset(0).limit(20)
+    
+    render 'index'    
   end
 end

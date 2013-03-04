@@ -1,0 +1,6 @@
+%li.boat
+  .thumbnail
+    = image_tag boats_info.photo, size: '400x400'
+    .caption
+      %h4= boats_info.NAME
+      %p= simple_format truncate(boats_info.DESC_FULL,:length=>100)
