@@ -15,23 +15,20 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
   gem 'bootstrap-sass'
 end
 
-group :development do
+
   gem  'thin'
-end
+
 
 gem "haml-rails", "~> 0.3.4"
 
 gem 'jquery-rails'
-
-gem "formtastic"
-gem "formtastic-bootstrap"
 
 gem "ransack"
 gem "kaminari"
